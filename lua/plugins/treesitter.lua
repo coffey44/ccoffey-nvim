@@ -19,6 +19,9 @@ return  -- Treesitter package
         "dockerfile",
         "xml",
         "python",
+        "tsx",
+        "css",
+        "jsx"
       })
 
       -- Enable Tree-sitter highlighting for supported filetypes.

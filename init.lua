@@ -22,3 +22,14 @@ local opts = {}
 require("vimoptions")
 require("lazy").setup("plugins")
 
+-- Error Lens
+vim.diagnostic.config({
+  virtual_text = {
+    spacing = 4,         -- Distance from the end of the code line
+    prefix = '●',        -- Symbol to display before the error message
+    severity = nil,      -- Show all severities (Error, Warn, Info, Hint)
+  },
+  signs = true,          -- Keep sign column indicators
+  update_in_insert = false, -- Don't update diagnostics while typing
+  underline = true,      -- Underline the error text
+})
