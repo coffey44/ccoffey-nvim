@@ -1,0 +1,16 @@
+# Ignore lazy.nvim plugin installation state
+/.repro/
+/lazy-lock.json
+
+# If you use other package managers
+/.packer/
+/plugin/packer_compiled.lua
+
+# Ignore temporary swap, backup, and undo files
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Ignore local log files
+*.log
