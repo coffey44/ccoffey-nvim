@@ -57,6 +57,7 @@ return {
       { "<leader>tv", "<cmd>ToggleTerm direction=vertical size=60<cr>", desc = "Vertical Terminal" },
       { "<leader>tV", "<cmd>ToggleTermNewVertical<cr>", desc = "New Vertical Terminal" },
       { "<leader>tw", "<cmd>Gitsigns toggle_word_diff<cr>", desc = "Git Word Diff" },
+      { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
   },
   keys = {
