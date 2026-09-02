@@ -31,6 +31,22 @@ return {
   config = function(_, opts)
     require("toggleterm").setup(opts)
 
+    local terminal = require("toggleterm.terminal")
+
+    local function new_terminal(direction)
+      local term = terminal.Terminal:new({ direction = direction })
+      term:open(nil, direction)
+      return term
+    end
+
+    vim.api.nvim_create_user_command("ToggleTermNewFloat", function()
+      new_terminal("float")
+    end, { desc = "Create a new floating terminal" })
+
+    vim.api.nvim_create_user_command("ToggleTermNewVertical", function()
+      new_terminal("vertical")
+    end, { desc = "Create a new vertical terminal" })
+
     local function set_terminal_keymaps()
       local keymap_opts = { buffer = 0, silent = true }
       vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], keymap_opts)
