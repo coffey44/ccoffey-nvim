@@ -9,3 +9,5 @@ There are a couple of packages OS dependencies that you need to install to set u
     - brew install ripgrep
     - brew install fd
     - brew install tree-sitter tree-sitter-cli 
+
+Run `:Lazy install` to install the plugins 
