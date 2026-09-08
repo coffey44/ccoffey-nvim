@@ -21,7 +21,8 @@ return  -- Treesitter package
         "python",
         "tsx",
         "css",
-        "jsx"
+        "jsx",
+        "c_sharp"
       })
 
       -- Enable Tree-sitter highlighting for supported filetypes.
@@ -31,11 +32,16 @@ return  -- Treesitter package
         end,
       })
 
-      -- Optional: Tree-sitter indentation.
       vim.api.nvim_create_autocmd("FileType", {
-        callback = function()
-          vim.bo.indentexpr =
-          "v:lua.require'nvim-treesitter'.indentexpr()"
+        pattern = "*",
+        callback = function(details)
+          local bufnr = details.buf
+          local lang = vim.treesitter.language.get_lang(vim.bo[bufnr].filetype)
+
+          -- Enable nvim-treesitter indentation only if an indents query exists for this language
+          if lang and vim.treesitter.query.get(lang, "indents") then
+            vim.bo[bufnr].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
         end,
       })
     end,
