@@ -9,7 +9,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { 'lua_ls', "ts_ls", "pyright", "csharp_ls"},
+        ensure_installed = { 'lua_ls', "ts_ls", "pyright", "csharp_ls", "html"},
       })
     end,
   },
@@ -32,6 +32,9 @@ return {
         },
       })
       vim.lsp.config("ts_ls", {
+        capabilities = capabilities,
+      })
+      vim.lsp.config("html", {
         capabilities = capabilities,
       })
       vim.lsp.config("csharp_ls", {
@@ -62,6 +65,7 @@ return {
 
       vim.lsp.enable("lua_ls")
       vim.lsp.enable("ts_ls")
+      vim.lsp.enable("html")
       vim.lsp.enable("csharp_ls")
       vim.lsp.enable("pyright")
       vim.lsp.codelens.enable(true)

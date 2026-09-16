@@ -14,6 +14,7 @@ return  -- Treesitter package
         "javascript",
         "typescript",
         "html",
+        "html_tags",
         "java",
         "json",
         "dockerfile",
@@ -22,7 +23,13 @@ return  -- Treesitter package
         "tsx",
         "css",
         "jsx",
-        "c_sharp"
+        "astro",
+        "svelte",
+        "vue",
+        "php",
+        "liquid",
+        "twig",
+        "c_sharp",
       })
 
       -- Enable Tree-sitter highlighting for supported filetypes.
