@@ -22,7 +22,7 @@ return {
     },
     size = function(term)
       if term.direction == "vertical" then
-        return math.floor(vim.o.columns * 0.7)
+        return math.floor(vim.o.columns)
       end
 
       return 20
