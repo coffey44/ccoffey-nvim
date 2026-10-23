@@ -9,7 +9,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { 'lua_ls', "ts_ls", "pyright", "csharp_ls", "html", "tailwindcss", "cssls" },
+        ensure_installed = { 'lua_ls', "ts_ls", "pyright", "csharp_ls", "html", "tailwindcss", "cssls", "rust_analyzer" },
       })
     end,
   },
@@ -30,6 +30,9 @@ return {
             },
           },
         },
+      })
+      vim.lsp.config("rust_analyzer", {
+        capabilities = capabilities,
       })
       vim.lsp.config("ts_ls", {
         capabilities = capabilities,

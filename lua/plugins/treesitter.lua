@@ -30,6 +30,7 @@ return  -- Treesitter package
         "liquid",
         "twig",
         "c_sharp",
+        "rust",
       })
 
       -- Enable Tree-sitter highlighting for supported filetypes.
